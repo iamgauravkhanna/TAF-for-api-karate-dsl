@@ -1,11 +1,11 @@
-function fn() {
+function defineConfigurations() {
 
-	var env = karate.env; // get java system property 'karate.env'
+	var env = karate.env;
 
 	karate.log('karate.env system property was:', env);
 
 	if (!env) {
-		env = 'dev'; // a custom 'intelligent' default
+		env = 'dev';
 	}
 
 	var config = { // base config JSON
