@@ -52,12 +52,12 @@ Feature: To get the booking details from Restful-Booker
     Then status 200
     And match each response contains {bookingid: '#number'}
 
-  @getBookingDetailsUsingFeature
-  Scenario: To view booking details in Restful-Booker based on Name using other feature
-    * def bookingID = call read('GetBookingDetails.feature@getBookingDetailsById1')
+  @getBookingDetailsUsingFeature @tc005
+  Scenario: To view booking details in Restful-Booker based on Name using other feature output
+    * def output = call read('GetBookingDetails.feature@tc002-b')
+    * print output
     Given path 'booking'
-    And params {firstname: '#(bookingID.firstName)', lastname: '#(bookingID.lastName)'}
+    And params {firstname: '#(output.firstName)', lastname: '#(output.lastName)'}
     When method GET
     Then status 200
-    And match response == '#[]? _.length >= 1'
     And match each response contains {bookingid: '#number'}

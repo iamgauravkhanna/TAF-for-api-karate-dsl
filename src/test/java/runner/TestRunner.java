@@ -6,6 +6,6 @@ public class TestRunner {
 
     @Karate.Test
     Karate runScenario() {
-        return Karate.run("classpath:features/project01").tags("@tc004");
+        return Karate.run("classpath:features/project01").tags("@tc005");
     }
 }
