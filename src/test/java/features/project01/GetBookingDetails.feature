@@ -50,7 +50,6 @@ Feature: To get the booking details from Restful-Booker
     And param checkout = '2021-12-12'
     When method GET
     Then status 200
-    And match response == '#[]? _.length >= 1'
     And match each response contains {bookingid: '#number'}
 
   @getBookingDetailsUsingFeature
