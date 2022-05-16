@@ -16,8 +16,8 @@ function defineConfigurations() {
 
 	karate.configure('connectTimeout', 5000);
 	karate.configure('readTimeout', 5000);
-	karate.configure('logPrettyRequest', true);
-	karate.configure('logPrettyResponse', true);
+	karate.configure('logPrettyRequest', false);
+	karate.configure('logPrettyResponse', false);
 	karate.configure('report', { showLog: true, showAllSteps: false });
 	karate.configure('responseHeaders', { 'Content-Type': 'application/json', Accept: 'application/json' });
 	return config;
